@@ -4,8 +4,26 @@
     padding: 0;
     box-sizing: border-box;
   }
-  
-
+  .mid
+  {
+    text-align: center;
+    text-align: left;
+    margin: 200px;
+  }
+  #changing-text {
+    font-weight: bold;
+    color: #3498db;
+  }
+  body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-image: url(/Images/Background.svg); /* Replace with your image path */
+    background-size: cover; /* Ensures the image covers the entire screen */
+    background-position: center; /* Centers the image */
+    background-attachment: fixed; /* Keeps the image fixed when scrolling */
+    color: white; /* Text color to make it readable on dark background */
+}
   .navbar {
     display: flex;
     justify-content: space-between;

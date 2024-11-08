@@ -12,7 +12,7 @@
 
     <nav class="navbar">
         <div class="logo">
-            <img id="img" src="/Images/logo.jpeg"alt="Logo" width="25">
+            <img id="img" src="/Images/logo.jpeg" alt="Logo" width="25">
         </div>
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
@@ -24,17 +24,29 @@
             <a href="javascript:void(0)" onclick="toggleimage()">Login</a>
         </div>
     </nav>
-    <script>
-        function toggleimage() {
-            let img = document.getElementById("img");
-            if (img.style.display === 'none') {
-                img.style.display = 'block'; // Show the image
-            } else {
-                img.style.display = 'none'; // Hide the image
-            }
-        }
-    </script>
-
+    <div class="mid">
+        <h1>Hi, I am Gulam Murshed</h1>
+        <h2>I am a <span id="changing-text"></span></h2>
+    </div>
 </body>
+<script>
+    const words = ["Developer", "Designer", "Problem Solver", "Lifelong Learner"];
+    const textElement = document.getElementById("changing-text");
+
+    let wordIndex = 0;
+
+    // Function to update the text
+    function changeText() {
+        textElement.textContent = words[wordIndex];
+        wordIndex = (wordIndex + 1) % words.length; // Cycle through the array
+    }
+
+    // Update the text every 2 seconds
+    setInterval(changeText, 2000);
+
+    // Initialize with the first word
+    changeText();
+
+</script>
 
 </html>
