@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects</title>
+    <link rel="stylesheet" href="../Css/Projects.css">
+</head>
+
+<body>
+    <nav>
+        <img src="/Images/logo.jpeg" height="50px">
+        <ul>
+            <ul>
+                <li><a href="./Files/Html/index.html">Home</a></li>
+                <li><a href="#Teams">Teams</a></li>
+                <li><a href="#Service">Service</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+        </ul>
+
+    </nav>
+    <div class="calculator">
+        <input type="text" class="calculator-display" id="display" value="0" disabled>
+        <div class="calculator-buttons">
+            <table border="1">
+                <tr>
+                    <th><button class="btn" data-value="7">7</button></th>
+                    <th><button class="btn" data-value="8">8</button></th>
+                    <th><button class="btn" data-value="9">9</button></th>
+                    <th><button class="btn operator" data-value="/">÷</button></th>
+                </tr>
+
+                <tr>
+                    <th><button class="btn" data-value="4">4</button></th>
+                    <th><button class="btn" data-value="5">5</button></th>
+                    <th><button class="btn" data-value="6">6</button></th>
+                    <th><button class="btn operator" data-value="*">×</button></th>
+                </tr>
+                <tr>
+                    <th> <button class="btn" data-value="1">1</button></th>
+                    <th><button class="btn" data-value="2">2</button></th>
+                    <th><button class="btn" data-value="3">3</button></th>
+                    <th> <button class="btn operator" data-value="-">−</button></th>
+                </tr>
+                <tr>
+                    <th><button class="btn" data-value="0">0</button></th>
+                    <th><button class="btn" data-value=".">.</button></th>
+                    <th><button class="btn" id="clear">C</button></th>
+                    <th><button class="btn operator" data-value="+">+</button></th>
+
+                </tr>
+                <td1>
+                    <th><button class="btn equal" id="equals" data-value="=">=</button></th>
+                </td1>
+
+
+            </table>
+        </div>
+    </div>
+    <script>
+        const display = document.getElementById("display");
+        display.value = "0";
+        document.querySelectorAll('.btn').forEach(button => {
+            button.addEventListener("click", () => {
+                const value = button.dataset.value;
+                if (button.id === 'equals') {
+                    return;
+                }
+                console.log("Button value:", value);
+                if (display.value == "0") {
+                    display.value = value;
+                }
+                else {
+                    display.value += value;
+                }
+
+            })
+        })
+        document.getElementById('clear').addEventListener('click', () => {
+            display.value = "0";
+        });
+        document.getElementById('equals').addEventListener('click', () => {
+            console.log("Evaluating:", display.value);
+            try {
+                display.value = eval(display.value);
+            }
+            catch {
+                display.value = "error";
+            }
+
+        }
+        )
+    </script>
+</body>
+
+</html>

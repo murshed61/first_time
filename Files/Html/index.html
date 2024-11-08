@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation Bar</title>
+    <link rel="stylesheet" href="/Files/Css/index.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo">
+            <img id="img" src="/Images/logo.jpeg" alt="Logo" width="25">
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="/Files/Html/Projects.html">Projects</a></li>
+            <li><a href="#about">About</a></li>
+        </ul>
+        <div class="login">
+            <a href="javascript:void(0)" onclick="toggleimage()">Login</a>
+        </div>
+    </nav>
+    <script>
+        function toggleimage() {
+            let img = document.getElementById("img");
+            if (img.style.display === 'none') {
+                img.style.display = 'block'; // Show the image
+            } else {
+                img.style.display = 'none'; // Hide the image
+            }
+        }
+    </script>
+
+</body>
+
+</html>
